@@ -4,10 +4,15 @@ html
 		meta(charset="utf-8")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
 		title Inicio de sesión
+		link(rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.min.css")
 	body
-		input(type="text", placeholder="Correo")
-		input(type="text", placeholder="Contraseña")
-		button(type="submit") Enviar
-		a(id="facebook", href="#")
-		a(id="twitter", href="#")
-		a(id="google", href="#")
+		form(id="form-inicio-sesion")
+			input(type="text", id="correo" placeholder="Correo")
+			input(type="text", id="contrasenia" placeholder="Contraseña")
+			button(type="submit") Enviar
+		button(class="login-facebook btn-floating", href="#")
+			i(class="fa fa-facebook")
+		button(class="twitter", href="#")
+		button(class="google", href="#")
+		script(src="https://use.fontawesome.com/75919d6994.js")
+		script(src="../js/inicio-sesion.js")
