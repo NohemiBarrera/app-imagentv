@@ -4,27 +4,28 @@ html(lang="es")
 		meta(charset="utf-8")
 		title Bienvenida
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
-		link(rel="stylesheet", href="../node_modules/materialize-css/dist/css/materialize.min.css")
-		link(rel="stylesheet", href="../public/css/style.css")
+		link(rel="stylesheet", href="../../node_modules/materialize-css/dist/css/materialize.min.css")
+		link(rel="stylesheet", href="../../public/css/style.css")
 	body
 		div(class="carousel carousel-slider center" data-indicators="true")
-			div(class="carousel-item red white-text" href="#one!")
+			div(class="carousel-item white blue-text" href="#one!")
 				p Esto es lo que tenemos para ti
-				img(href="../public/img/img-intro.png")#img-intro
+				img(src="../img/img_intro.png").responsive-img.img-intro
 				p Bienvenid@ a Imagen Televisión
 				p Aquí encontrarás el mejor contenido de entretenimiento, noticias, deportes y más.
-			div(class="carousel-item amber white-text" href="#two!")
+			div(class="carousel-item white blue-text" href="#two!")
 				p Esto es lo que tenemos para ti
-				img(href="../img/img-intro.png")
+				img(src="../img/img_mi_lista.png").responsive-img.img-intro
 				p Mi lista
 				p Aquí puedes guardar tus videos favoritos para verlos todas las veces que quieras.
-			div(class="carousel-item blue white-text" href="#two!")
+			div(class="carousel-item white blue-text" href="#two!")
 				p Esto es lo que tenemos para ti
-				img(href="../img/img-intro.png")
+				img(src="../img/img_personalizar_menu.png").responsive-img.img-intro
 				p Personalizar menú
 				p Acomoda las secciones a tu gusto arrastrándolas desde donde se muestra en la imagen.
 			div(class="carousel-fixed-item center")
-				a(class="btn waves-effect white grey-text darken-text-2") CONTINUAR
+				a(class="btn waves-effect red white-text darken-text-2", href="notificaciones.html") CONTINUAR
+
 	script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
-	script(src="../node_modules/materialize-css/dist/js/materialize.min.js")
-	script(src="../public/js/bienvenida.js")
+	script(src="../../node_modules/materialize-css/dist/js/materialize.min.js")
+	script(src="../../public/js/bienvenida.js")

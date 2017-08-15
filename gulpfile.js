@@ -7,7 +7,7 @@ gulp.task('pug', function(){
     .pipe(pug({
         pretty: true
     }))
-    .pipe(gulp.dest('./public'))
+    .pipe(gulp.dest('./public/views'))
 });
 
 gulp.task('sass', function() {
