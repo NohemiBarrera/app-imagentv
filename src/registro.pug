@@ -1,0 +1,28 @@
+doctype
+html(lang="es")
+	head
+		meta(charset="utf-8")
+		title Registro
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		link(rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.min.css")
+	body
+		form#formulario-registro
+			input(type="text", placeholder="Nombre")#nombre
+			br
+			input(type="email", placeholder="Correo electrónico")#correo
+			br
+			input(type="password", placeholder="Contraseña")#contrasenia
+			br
+			input(type="number", min="1", max="2", maxlength="12", placeholder="Día")
+			input(type="number", min="1", max="12", maxlength="2", placeholder="Mes")
+			input(type="number", min="1", max="4", placeholder="Año", maxlength="")#anio
+			br
+			select#select
+				option(value="masculino") Masculino
+				option(value="femenino") Femenino
+			br
+			button(type="submit")#crearUsuario CONTINUAR
+			p Al continuar declaras que aceptas nuestro 
+				a(href="#") Aviso de privacidad
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+	script(src="../node_modules/materialize-css/dist/js/materialize.min.js")
