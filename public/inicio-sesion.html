@@ -5,17 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de sesión</title>
     <link rel="stylesheet" href="../node_modules/materialize-css/dist/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
   </head>
   <body>
-    <form id="form-inicio-sesion">
+    <form id="formulario">
       <input type="text" id="correo" placeholder="Correo">
       <input type="text" id="contrasenia" placeholder="Contraseña">
       <button type="submit">Enviar</button>
     </form>
-    <button class="login-facebook btn-floating" href="#"><i class="fa fa-facebook"></i></button>
-    <button class="twitter" href="#"></button>
-    <button class="google" href="#"></button>
+    <button class="facebook btn-floating" href="#"><i class="fa fa-facebook blue darken-3 text-white"></i></button>
+    <button class="twitter btn-floating" href="#"><i class="fa fa-twitter blue text-white"></i></button>
+    <button class="google btn-floating" href="#"><i class="fa fa-google red text-white"></i></button>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
     <script src="https://use.fontawesome.com/75919d6994.js"></script>
-    <script src="../js/inicio-sesion.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <script src="js/inicio-sesion.js"></script>
   </body>
 </html>

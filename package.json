@@ -17,7 +17,8 @@
   },
   "homepage": "https://github.com/YessiGarcia/app-imagentv#readme",
   "dependencies": {
-    "materialize-css": "^0.100.1"
+    "materialize-css": "^0.100.1",
+    "sweetalert": "^1.1.3"
   },
   "devDependencies": {
     "express": "^4.15.4",
