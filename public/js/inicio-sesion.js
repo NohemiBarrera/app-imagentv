@@ -4,15 +4,15 @@ const $formulario = $('#formulario');
 const $ingresar = $('#ingresar');
 
 var cargarPagina = function(){
-	$formulario.submit(valiarCampos);
+	$formulario.submit(validarCampos);
 	$ingresar.addClass('disabled');
-	emptyFields();
+	camposVacios();
 	$correo.keyup(camposVacios);
 	$contrasenia.keyup(camposVacios);
 	$ingresar.click(validarCampos);
 }
 
-const emptyFields = ()=>{
+const camposVacios = ()=>{
 	if( $correo.val().length == 0 || $contrasenia.val().length == 0 ){
 		$ingresar.addClass('disabled');
 	}else {
@@ -21,20 +21,35 @@ const emptyFields = ()=>{
 }
 
 const validarCorreo = ()=>{
-	let emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-	if (emailRegex.test($email.val())) {
+	let patronCorreo = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+	if (patronCorreo.test($correo.val())) {
 		return true;
 	} else {
-		alert("Ingresa un email valido");
+		swal({
+			title: "Error!",
+			text: "Ingresa un correo valido!",
+			type: "error",
+			confirmButtonText: "OK"
+		});
 	}
 };
 
 const validarContrasenia = ()=>{
-	if($password.val().length > 6){
-		alert("Recuerda que debes ingresar un password de 6 dígitos");
-	} else if ($password.val().length < 6){
-		alert("Recuerda que debes ingresar un password de mínimo 6 dígitos");
-	} else if($password.val().length == 6){ return true};
+	if($contrasenia.val().length > 6){
+		swal({
+			title: "Error!",
+			text: "Recuerda que debes ingresar un password de 6 dígitos!",
+			type: "error",
+			confirmButtonText: "Cool"
+		});
+	} else if ($contrasenia.val().length < 6){
+		swal({
+			title: "Error!",
+			text: "Recuerda que debes ingresar un password de 6 dígitos!",
+			type: "error",
+			confirmButtonText: "OK"
+		});
+	} else if($contrasenia.val().length == 6){ return true};
 }
 
 const validarCampos = (e)=>{
@@ -92,11 +107,11 @@ var entrar = function(proveedor){
 		localStorage.setItem('name', responseAPI.name);
 
 
-		loginUser(responseAPI);
+		ingresoDeUsuario(responseAPI);
 	})
 		.then(function() {
 
-		location.href = 'bienvenido.html';
+		//location.href = 'bienvenida.html';
 	})
 		.catch(function(error) {
 		var errorCode = error.code;
@@ -141,8 +156,8 @@ var botonFb = document.querySelector('.facebook');
 var botonTwitter = document.querySelector('.twitter');
 var botonGoogle = document.querySelector('.google');
 
-fbButton.addEventListener('click', loginWithFb);
-twitterButton.addEventListener('click', loginWithTwitter);
-googleButton.addEventListener('click', loginWithGoogle);
+botonFb.addEventListener('click', entrarConFacebook);
+botonTwitter.addEventListener('click', entrarConTwitter);
+botonGoogle.addEventListener('click', entrarConGoogle);
 
 $(document).ready(cargarPagina);
